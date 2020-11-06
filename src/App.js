@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
+import EmployeeCard from "./components/employee";
+import Employee from "./employee.json";
+import EmployeeSearch from "./components/searchResults"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  // Setting this.state.employee to the employee json array
+  state = {
+    employee
+  };
+
+  EmployeeSearch = id => {
+    // Filter this.state.employee for employee with an id not equal to the id being removed
+    const employee = this.state.Employee.filter(employee => employee.id == id);
+    // Set this.state.employee equal to the new employee array
+    this.setState({ Employee });
+  };
+
+  // Map over this.state.employee and render a FriendCard component for each friend object
+  render() {
+    return (
+      <div>
+        <Title>employee List</Title>
+        {this.state.employee.map(employee => (
+          <EmployeeCard
+            EmployeeSearch={this.EmployeeSearch}
+            id={employee.id}
+            key={employee.id}
+            name={employee.name}
+            occupation={employee.occupation}
+            department={employee.department}
+          />
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;
