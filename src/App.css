@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+footer {
+  background: rgb(79, 114, 13);
+  color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  min-height: 10vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,14 +25,21 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url(https://www.thelabradorsite.com/wp-content/uploads/2017/05/When-can-puppies-go-outside-LS-long.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   color: white;
+}
+.container{
+  margin-top: 10px; 
+  
+  
 }
 
 .App-link {
@@ -35,4 +53,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer-spacer {
+  height: 6rem;
+}
+
+.header-spacer {
+  height: 2.5rem;
+}
+
+.loading {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
 }

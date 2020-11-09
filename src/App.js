@@ -1,40 +1,26 @@
-import React from "react"
-import './App.css';
-import EmployeeCard from "./components/employee";
-import Employee from "./employee.json";
-import EmployeeSearch from "./components/searchResults"
 
-class App extends Component {
-  // Setting this.state.employee to the employee json array
-  state = {
-    employee
-  };
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Search from './pages/Search';
+import Home from './pages/Home';
+import NavBar from './components/NavTabs';
+import Footer from './components/Footer';
+import Wrapper from './components/Wrapper';
 
-  EmployeeSearch = id => {
-    // Filter this.state.employee for employee with an id not equal to the id being removed
-    const employee = this.state.Employee.filter(employee => employee.id == id);
-    // Set this.state.employee equal to the new employee array
-    this.setState({ Employee });
-  };
-
-  // Map over this.state.employee and render a FriendCard component for each friend object
-  render() {
-    return (
+function App() {
+  return (
+    <Router>
       <div>
-        <Title>employee List</Title>
-        {this.state.employee.map(employee => (
-          <EmployeeCard
-            EmployeeSearch={this.EmployeeSearch}
-            id={employee.id}
-            key={employee.id}
-            name={employee.name}
-            occupation={employee.occupation}
-            department={employee.department}
-          />
-        ))}
+        <NavBar />
+        <Wrapper>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/Home' component={Home} />
+          <Route exact path='/Search' component={Search} />
+        </Wrapper>
+        <Footer />
       </div>
-    );
-  }
+    </Router>
+  )
 }
 
 export default App;

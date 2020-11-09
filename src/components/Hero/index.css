@@ -1,0 +1,16 @@
+.hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero h1, .hero h2 {
+    color: #FFFFFF;
+}
+
+.hero h1 {
+    font-size: 60px;
+    padding-top: 140px;
+    margin-top: 0;
+}
